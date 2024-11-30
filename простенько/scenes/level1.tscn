@@ -1,16 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://hqgyne88uy1v"]
+[gd_scene load_steps=16 format=3 uid="uid://hqgyne88uy1v"]
 
-[ext_resource type="Texture2D" uid="uid://c5xgu2i40r4nj" path="res://Purple.png" id="1_fq3cv"]
-[ext_resource type="Texture2D" uid="uid://3shxo6t5fp3" path="res://Clouds1.png" id="1_k1cwq"]
-[ext_resource type="Texture2D" uid="uid://bw0jl2yo67q36" path="res://Clouds3.png" id="2_o68a4"]
-[ext_resource type="Texture2D" uid="uid://ddwvma7pqq4vo" path="res://Terrain (16x16).png" id="2_ypnmv"]
+[ext_resource type="Texture2D" uid="uid://c5xgu2i40r4nj" path="res://pictures/Purple.png" id="1_fq3cv"]
+[ext_resource type="Texture2D" uid="uid://3shxo6t5fp3" path="res://pictures/Clouds1.png" id="1_k1cwq"]
+[ext_resource type="Texture2D" uid="uid://bw0jl2yo67q36" path="res://pictures/Clouds3.png" id="2_o68a4"]
+[ext_resource type="Texture2D" uid="uid://ddwvma7pqq4vo" path="res://pictures/Terrain (16x16).png" id="2_ypnmv"]
 [ext_resource type="PackedScene" uid="uid://cdrgt8blg5vsp" path="res://scenes/main_character.tscn" id="3_gvnlq"]
-[ext_resource type="Texture2D" uid="uid://crub7fbywdts2" path="res://Clouds4.png" id="3_x3xr5"]
-[ext_resource type="Texture2D" uid="uid://deerc7s06cnru" path="res://Clouds2.png" id="4_ekrbm"]
+[ext_resource type="Texture2D" uid="uid://crub7fbywdts2" path="res://pictures/Clouds4.png" id="3_x3xr5"]
+[ext_resource type="Texture2D" uid="uid://deerc7s06cnru" path="res://pictures/Clouds2.png" id="4_ekrbm"]
 [ext_resource type="PackedScene" uid="uid://byfroijb61sfx" path="res://scenes/collectable_kiwi.tscn" id="4_l83rs"]
-[ext_resource type="PackedScene" uid="uid://vqyrd4r1et4w" path="res://finish.tscn" id="5_slcow"]
+[ext_resource type="PackedScene" uid="uid://vqyrd4r1et4w" path="res://scenes/finish.tscn" id="5_slcow"]
 [ext_resource type="PackedScene" uid="uid://8heahlr3kklx" path="res://scenes/level2.tscn" id="6_8waqw"]
-[ext_resource type="Script" path="res://game_manager.gd" id="6_pkmah"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="6_pkmah"]
+[ext_resource type="AudioStream" uid="uid://e77fuaky7vsp" path="res://sounds/inecraft_levelu.ogg" id="12_8pkqc"]
+[ext_resource type="PackedScene" uid="uid://cck58dljqrxv1" path="res://scenes/spike.tscn" id="13_aon3s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_16j0h"]
 texture = ExtResource("2_ypnmv")
@@ -256,26 +258,6 @@ position = Vector2(64, 248)
 zoom = Vector2(1.25, 1.25)
 position_smoothing_enabled = true
 
-[node name="Collectable_kiwi" parent="." instance=ExtResource("4_l83rs")]
-position = Vector2(527, 455)
-scale = Vector2(1.2, 1.2)
-
-[node name="Collectable_kiwi2" parent="." instance=ExtResource("4_l83rs")]
-position = Vector2(741, 501)
-scale = Vector2(1.2, 1.2)
-
-[node name="Collectable_kiwi3" parent="." instance=ExtResource("4_l83rs")]
-position = Vector2(773, 205)
-scale = Vector2(1.2, 1.2)
-
-[node name="Collectable_kiwi4" parent="." instance=ExtResource("4_l83rs")]
-position = Vector2(976, 384)
-scale = Vector2(1.2, 1.2)
-
-[node name="Collectable_kiwi5" parent="." instance=ExtResource("4_l83rs")]
-position = Vector2(1128, 448)
-scale = Vector2(1.2, 1.2)
-
 [node name="Finish" parent="." instance=ExtResource("5_slcow")]
 position = Vector2(1055, 555)
 target_level = ExtResource("6_8waqw")
@@ -304,3 +286,37 @@ theme_override_font_sizes/font_size = 30
 text = "Points: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Collectable_kiwi" parent="." instance=ExtResource("4_l83rs")]
+position = Vector2(520, 440)
+
+[node name="Collectable_kiwi3" parent="." instance=ExtResource("4_l83rs")]
+position = Vector2(1120, 408)
+
+[node name="Collectable_kiwi2" parent="." instance=ExtResource("4_l83rs")]
+position = Vector2(744, 496)
+
+[node name="Collectable_kiwi4" parent="." instance=ExtResource("4_l83rs")]
+position = Vector2(584, 176)
+
+[node name="Collectable_kiwi5" parent="." instance=ExtResource("4_l83rs")]
+position = Vector2(1024, 288)
+
+[node name="LevelUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_8pkqc")
+autoplay = true
+
+[node name="Spike" parent="." instance=ExtResource("13_aon3s")]
+position = Vector2(312, 624)
+
+[node name="Spike2" parent="." instance=ExtResource("13_aon3s")]
+position = Vector2(168, 624)
+
+[node name="Spike3" parent="." instance=ExtResource("13_aon3s")]
+position = Vector2(656, 528)
+
+[node name="Spike6" parent="." instance=ExtResource("13_aon3s")]
+position = Vector2(648, 240)
+
+[node name="Spike7" parent="." instance=ExtResource("13_aon3s")]
+position = Vector2(824, 240)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://byfroijb61sfx"]
 
-[ext_resource type="Script" path="res://scenes/collectable_kiwi.gd" id="1_3n24n"]
-[ext_resource type="Texture2D" uid="uid://br8vtfd754hlf" path="res://Kiwi.png" id="1_g0dcd"]
+[ext_resource type="Script" path="res://scripts/collectable_kiwi.gd" id="1_3n24n"]
+[ext_resource type="Texture2D" uid="uid://br8vtfd754hlf" path="res://pictures/Kiwi.png" id="1_g0dcd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pwufp"]
 atlas = ExtResource("1_g0dcd")
@@ -131,14 +131,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_33me5"]
-radius = 12.0
+radius = 16.0312
 
 [node name="Collectable_kiwi" type="Area2D"]
 script = ExtResource("1_3n24n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(1.75, 1.75)
+scale = Vector2(2.3125, 2.3125)
 sprite_frames = SubResource("SpriteFrames_bq87u")
 autoplay = "default"
 frame_progress = 0.0321392

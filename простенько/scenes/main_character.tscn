@@ -1,9 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://cdrgt8blg5vsp"]
+[gd_scene load_steps=32 format=3 uid="uid://cdrgt8blg5vsp"]
 
-[ext_resource type="Script" path="res://scenes/main_character.gd" id="1_ehq25"]
-[ext_resource type="Texture2D" uid="uid://be0lpfx60add2" path="res://Jump (32x32).png" id="1_lrcnk"]
-[ext_resource type="Texture2D" uid="uid://cicyh7ny0ypi" path="res://Idle (32x32).png" id="2_1l1pc"]
-[ext_resource type="Texture2D" uid="uid://0gwfwtbn8a24" path="res://Run (32x32).png" id="4_8m2wc"]
+[ext_resource type="Script" path="res://scripts/main_character.gd" id="1_ehq25"]
+[ext_resource type="Texture2D" uid="uid://be0lpfx60add2" path="res://pictures/Jump (32x32).png" id="1_lrcnk"]
+[ext_resource type="Texture2D" uid="uid://cicyh7ny0ypi" path="res://pictures/Idle (32x32).png" id="2_1l1pc"]
+[ext_resource type="Texture2D" uid="uid://0gwfwtbn8a24" path="res://pictures/Run (32x32).png" id="4_8m2wc"]
+[ext_resource type="AudioStream" uid="uid://b4y31qlmh4fbw" path="res://sounds/inecraft_eating.ogg" id="5_oxgeo"]
+[ext_resource type="AudioStream" uid="uid://e77fuaky7vsp" path="res://sounds/inecraft_levelu.ogg" id="6_gg25s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmlai"]
 atlas = ExtResource("2_1l1pc")
@@ -205,3 +207,10 @@ frame_progress = 0.949799
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -4)
 shape = SubResource("CapsuleShape2D_wanyf")
+
+[node name="EatingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_oxgeo")
+volume_db = 5.622
+
+[node name="LevelUP" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_gg25s")

@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://global.gd"
+Global="*res://scripts/global.gd"
+AudioPlayer="*res://Global/audio_player.tscn"
 
 [display]
 
@@ -47,4 +48,5 @@ jump={
 
 [physics]
 
+common/physics_ticks_per_second=120
 2d/default_gravity=2500.0

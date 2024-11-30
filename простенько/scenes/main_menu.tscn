@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bk86svsba5gk4"]
+[gd_scene load_steps=5 format=3 uid="uid://bk86svsba5gk4"]
 
-[ext_resource type="Texture2D" uid="uid://cjarhltw6w0r7" path="res://Green.png" id="1_mede0"]
-[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_x2ecu"]
-[ext_resource type="Texture2D" uid="uid://l07xaldfs5oo" path="res://Cool Text - KIWI 468331957401616.png" id="2_dkn1i"]
+[ext_resource type="Texture2D" uid="uid://cjarhltw6w0r7" path="res://pictures/Green.png" id="1_mede0"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_x2ecu"]
+[ext_resource type="Texture2D" uid="uid://l07xaldfs5oo" path="res://pictures/Cool Text - KIWI 468331957401616.png" id="2_dkn1i"]
+
+[sub_resource type="GDScript" id="GDScript_67x3d"]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_x2ecu")
@@ -42,5 +44,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "START!"
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+script = SubResource("GDScript_67x3d")
 
 [connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
